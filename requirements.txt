@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+firebase-admin
+jinja2
+python-multipart
+python-dotenv
+pytest
+httpx

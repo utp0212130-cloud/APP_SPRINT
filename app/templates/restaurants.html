@@ -1,0 +1,74 @@
+
+{% extends "base.html" %}
+
+{% block title %}Restaurantes | FriendlyEats{% endblock %}
+
+{% block content %}
+
+<section class="presentacion">
+    <h2>Descubre restaurantes en Puebla</h2>
+    <p>Encuentra lugares para disfrutar de buena comida.</p>
+
+    <a href="/restaurants/new" class="boton">
+        Agregar restaurante
+    </a>
+</section>
+
+<section class="filtros">
+    <h3>Buscar restaurantes</h3>
+
+    <form method="GET" action="/restaurants">
+        <input
+            type="text"
+            name="city"
+            placeholder="Ciudad"
+        >
+
+        <input
+            type="text"
+            name="category"
+            placeholder="Categoría"
+        >
+
+        <select name="price">
+            <option value="">Todos los precios</option>
+            <option value="1">$ Económico</option>
+            <option value="2">$$ Moderado</option>
+            <option value="3">$$$ Costoso</option>
+        </select>
+
+        <button type="submit" class="boton">
+            Buscar
+        </button>
+    </form>
+</section>
+
+<section class="lista-restaurantes">
+    <h2>Restaurantes disponibles</h2>
+
+    <div class="tarjetas">
+
+        {% for restaurant in restaurants %}
+
+        <article class="tarjeta">
+            <h3>{{ restaurant.name }}</h3>
+
+            <p><strong>Categoría:</strong> {{ restaurant.category }}</p>
+            <p><strong>Ciudad:</strong> {{ restaurant.city }}</p>
+            <p><strong>Precio:</strong> {{ "$" * restaurant.price }}</p>
+
+            <a href="/restaurants/{{ restaurant.id }}" class="boton">
+                Ver detalles
+            </a>
+        </article>
+
+        {% else %}
+
+        <p>No hay restaurantes registrados todavía.</p>
+
+        {% endfor %}
+
+    </div>
+</section>
+
+{% endblock %}

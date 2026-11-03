@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title %}FriendlyEats{% endblock %}</title>
+
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+
+    <header class="encabezado">
+        <div class="contenedor">
+            <h1>FriendlyEats</h1>
+            <p>Descubre restaurantes locales en Puebla</p>
+
+            <nav>
+                <a href="/">Inicio</a>
+                <a href="/restaurants">Restaurantes</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="contenedor contenido">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer class="pie">
+        <p>FriendlyEats - Restaurantes locales de Puebla</p>
+    </footer>
+
+    <script src="/static/js/app.js"></script>
+
+</body>
+</html>

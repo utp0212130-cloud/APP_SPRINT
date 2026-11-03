@@ -1,0 +1,77 @@
+
+{% extends "base.html" %}
+
+{% block title %}
+    {% if restaurant %}Editar restaurante{% else %}Agregar restaurante{% endif %} | FriendlyEats
+{% endblock %}
+
+{% block content %}
+
+<section class="formulario-restaurante">
+
+    <h2>
+        {% if restaurant %}
+            Editar restaurante
+        {% else %}
+            Agregar nuevo restaurante
+        {% endif %}
+    </h2>
+
+    <form method="POST" action="{% if restaurant %}/restaurants/{{ restaurant.id }}/edit{% else %}/restaurants/new{% endif %}">
+
+        <label for="name">Nombre del restaurante:</label>
+        <input
+            type="text"
+            id="name"
+            name="name"
+            value="{{ restaurant.name if restaurant else '' }}"
+            required
+        >
+
+        <label for="category">Categoría:</label>
+        <input
+            type="text"
+            id="category"
+            name="category"
+            value="{{ restaurant.category if restaurant else '' }}"
+            required
+        >
+
+        <label for="city">Ciudad:</label>
+        <input
+            type="text"
+            id="city"
+            name="city"
+            value="{{ restaurant.city if restaurant else '' }}"
+            required
+        >
+
+        <label for="address">Dirección:</label>
+        <input
+            type="text"
+            id="address"
+            name="address"
+            value="{{ restaurant.address if restaurant else '' }}"
+        >
+
+        <label for="price">Nivel de precio:</label>
+        <select id="price" name="price" required>
+            <option value="1" {% if restaurant and restaurant.price == 1 %}selected{% endif %}>$ Económico</option>
+            <option value="2" {% if restaurant and restaurant.price == 2 %}selected{% endif %}>$$ Moderado</option>
+            <option value="3" {% if restaurant and restaurant.price == 3 %}selected{% endif %}>$$$ Costoso</option>
+        </select>
+
+        <label for="description">Descripción:</label>
+        <textarea id="description" name="description">{{ restaurant.description if restaurant else '' }}</textarea>
+
+        <button type="submit" class="boton">
+            {% if restaurant %}Guardar cambios{% else %}Registrar restaurante{% endif %}
+        </button>
+
+    </form>
+
+    <a href="/restaurants" class="enlace-volver">Volver a restaurantes</a>
+
+</section>
+
+{% endblock %}

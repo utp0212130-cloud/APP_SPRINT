@@ -1,0 +1,7 @@
+{
+  "projects": {
+    "default": "friendlyeats-fastapi"
+  },
+  "targets": {},
+  "etags": {}
+}

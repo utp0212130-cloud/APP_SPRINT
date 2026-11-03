@@ -1,0 +1,351 @@
+
+
+:root {
+    --morado: #8054b8;
+    --morado-oscuro: #42245f;
+    --lavanda: #eee5f8;
+    --fondo: #faf8fc;
+    --blanco: #ffffff;
+    --texto: #352b40;
+    --gris: #81788b;
+    --borde: #ece5f2;
+    --rojo: #d95368;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: var(--fondo);
+    color: var(--texto);
+    line-height: 1.6;
+}
+
+.contenedor {
+    width: 90%;
+    max-width: 1180px;
+    margin: auto;
+}
+
+.contenido {
+    padding-top: 45px;
+    padding-bottom: 70px;
+}
+
+/* ENCABEZADO */
+
+.encabezado {
+    background: linear-gradient(120deg, #42245f, #7951a8);
+    color: white;
+    padding: 25px 0;
+    box-shadow: 0 5px 20px rgba(66, 36, 95, .15);
+}
+
+.encabezado h1 {
+    font-size: 32px;
+    font-weight: 800;
+    letter-spacing: .5px;
+}
+
+.encabezado p {
+    color: #e8ddf3;
+    font-size: 14px;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+    margin-top: 18px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: .3s;
+}
+
+nav a:hover {
+    color: #d9c0f6;
+}
+
+/* PRESENTACIÓN */
+
+.presentacion {
+    background: linear-gradient(120deg, #eee4fa, #f9f5ff);
+    padding: 55px 50px;
+    border-radius: 25px;
+    margin-bottom: 35px;
+    border: 1px solid #e9ddf5;
+}
+
+.presentacion h2 {
+    color: var(--morado-oscuro);
+    font-size: 34px;
+    line-height: 1.2;
+    margin-bottom: 14px;
+}
+
+.presentacion p {
+    color: var(--gris);
+    font-size: 16px;
+    margin-bottom: 25px;
+}
+
+/* BOTONES */
+
+.boton {
+    display: inline-block;
+    background: var(--morado);
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 12px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .25s;
+}
+
+.boton:hover {
+    background: var(--morado-oscuro);
+    transform: translateY(-3px);
+    box-shadow: 0 7px 16px rgba(80, 50, 118, .2);
+}
+
+.boton-eliminar {
+    background: var(--rojo);
+}
+
+.boton-eliminar:hover {
+    background: #b93b50;
+}
+
+/* BUSCADOR */
+
+.filtros {
+    background: white;
+    padding: 28px;
+    border-radius: 20px;
+    border: 1px solid var(--borde);
+    margin-bottom: 45px;
+    box-shadow: 0 5px 20px rgba(60, 35, 80, .04);
+}
+
+.filtros h3 {
+    color: var(--morado-oscuro);
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.filtros form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+/* CAMPOS */
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 13px 15px;
+    border: 1px solid var(--borde);
+    border-radius: 11px;
+    background: #fdfcff;
+    color: var(--texto);
+    font-size: 14px;
+    outline: none;
+    transition: .2s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--morado);
+    box-shadow: 0 0 0 3px rgba(128, 84, 184, .12);
+}
+
+.filtros input,
+.filtros select {
+    width: auto;
+    flex: 1;
+    min-width: 150px;
+}
+
+/* FORMULARIO */
+
+.formulario-restaurante {
+    max-width: 680px;
+    margin: auto;
+    background: white;
+    padding: 40px;
+    border-radius: 23px;
+    border: 1px solid var(--borde);
+    box-shadow: 0 10px 35px rgba(60, 35, 80, .07);
+}
+
+.formulario-restaurante h2 {
+    color: var(--morado-oscuro);
+    font-size: 27px;
+    margin-bottom: 25px;
+}
+
+.formulario-restaurante form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.formulario-restaurante label {
+    font-weight: 650;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.formulario-restaurante button {
+    margin-top: 18px;
+}
+
+.enlace-volver {
+    display: inline-block;
+    margin-top: 22px;
+    color: var(--morado);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+/* RESTAURANTES */
+
+.lista-restaurantes h2 {
+    color: var(--morado-oscuro);
+    font-size: 26px;
+    margin-bottom: 25px;
+}
+
+.tarjetas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+.tarjeta {
+    background: white;
+    padding: 28px;
+    border: 1px solid var(--borde);
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(60, 35, 80, .05);
+    transition: .3s;
+}
+
+.tarjeta:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(60, 35, 80, .11);
+}
+
+.tarjeta h3 {
+    color: var(--morado-oscuro);
+    font-size: 21px;
+    margin-bottom: 15px;
+}
+
+.tarjeta p {
+    color: var(--gris);
+    font-size: 14px;
+    margin-bottom: 9px;
+}
+
+.tarjeta .boton {
+    margin-top: 18px;
+}
+
+/* DETALLES */
+
+.detalle-restaurante {
+    background: white;
+    max-width: 780px;
+    margin: auto;
+    padding: 42px;
+    border-radius: 23px;
+    border: 1px solid var(--borde);
+    box-shadow: 0 10px 35px rgba(60, 35, 80, .07);
+}
+
+.detalle-restaurante h2 {
+    color: var(--morado-oscuro);
+    font-size: 30px;
+    margin-bottom: 25px;
+}
+
+.informacion-restaurante p {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--borde);
+}
+
+.acciones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 13px;
+    margin-top: 30px;
+}
+
+/* PIE DE PÁGINA */
+
+.pie {
+    background: var(--morado-oscuro);
+    color: white;
+    text-align: center;
+    padding: 25px;
+    font-size: 14px;
+}
+
+/* RESPONSIVO */
+
+@media (max-width: 600px) {
+    .encabezado h1 {
+        font-size: 26px;
+    }
+
+    .presentacion {
+        padding: 30px 24px;
+    }
+
+    .presentacion h2 {
+        font-size: 25px;
+    }
+
+    .filtros form {
+        flex-direction: column;
+    }
+
+    .filtros input,
+    .filtros select {
+        width: 100%;
+    }
+
+    .formulario-restaurante,
+    .detalle-restaurante {
+        padding: 25px;
+    }
+
+    .acciones {
+        flex-direction: column;
+    }
+
+    .acciones .boton,
+    .acciones form,
+    .acciones button {
+        width: 100%;
+    }
+}

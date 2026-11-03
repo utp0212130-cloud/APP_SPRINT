@@ -1,0 +1,61 @@
+
+{% extends "base.html" %}
+
+{% block title %}{{ restaurant.name }} | FriendlyEats{% endblock %}
+
+{% block content %}
+
+<section class="detalle-restaurante">
+
+    <h2>{{ restaurant.name }}</h2>
+
+    <div class="informacion-restaurante">
+
+        <p>
+            <strong>Categoría:</strong>
+            {{ restaurant.category }}
+        </p>
+
+        <p>
+            <strong>Ciudad:</strong>
+            {{ restaurant.city }}
+        </p>
+
+        <p>
+            <strong>Dirección:</strong>
+            {{ restaurant.address or "No especificada" }}
+        </p>
+
+        <p>
+            <strong>Precio:</strong>
+            {{ "$" * restaurant.price }}
+        </p>
+
+        <p>
+            <strong>Descripción:</strong>
+            {{ restaurant.description or "Sin descripción disponible" }}
+        </p>
+
+    </div>
+
+    <div class="acciones">
+
+        <a href="/restaurants/{{ restaurant.id }}/edit" class="boton">
+            Editar restaurante
+        </a>
+
+        <form method="POST" action="/restaurants/{{ restaurant.id }}/delete">
+            <button type="submit" class="boton boton-eliminar">
+                Eliminar restaurante
+            </button>
+        </form>
+
+        <a href="/restaurants" class="boton">
+            Volver a restaurantes
+        </a>
+
+    </div>
+
+</section>
+
+{% endblock %}
